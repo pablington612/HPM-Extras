@@ -116,7 +116,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 4
+		months = 3
 	}
 	
 	immediate = {
@@ -163,18 +163,14 @@ country_event = {
 	trigger = {
 		tag = USA
 		AND = {
-		2137 = { controlled_by = USA }
-		2140 = { controlled_by = USA }
-		2141 = { controlled_by = USA }
-		2138 = { controlled_by = SON }
-		2139 = { controlled_by = SON }
-		102  = { controlled_by = USA }
-		2662 = { controlled_by = USA }
+		2137 = { province_control_days = 45 }
+		2140 = { province_control_days = 45 }
+		2141 = { province_control_days = 45 }
+		2138 = { province_control_days = 45 }
+		2139 = { province_control_days = 45 }
+		102  = { province_control_days = 45 }
+		2662 = { province_control_days = 45 }
 		}
-	}
-	
-	mean_time_to_happen = {
-		months = 3
 	}
 	
 	immediate = {
@@ -248,12 +244,6 @@ country_event = {
 		personality = charismatic
 		background = adventurer
 		}
-		war = {
-			target = NIC
-			attacker_goal = { casus_belli = filibuster_conquest }
-			defender_goal = { casus_belli = status_quo }
-			call_ally = no
-		}
 		set_country_flag = USA_supported_walkernic
 	}
 }
@@ -280,6 +270,40 @@ country_event = {
 	
 	option = {
 		name = "Well, good luck to him."
+	}
+}
+
+country_event = {
+	id = 100030 #Walker Arrives in Nicaragua (Sonoran Filibuster suceeded, decided to help in evnt 100k28)
+	title = "Walker Arrives in Nicaragua"
+	desc = "Well known adventurer and celebrity William Walker has set his sights on Nicaragua after recent news of a civil war reached his ears.  He has been granted generalship for his actions in Sonora."
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		AND = {
+		year = 1855
+		month = 6
+		}
+		NIC = { exists = yes }
+		has_country_flag = sonfilibuster_success
+		has_country_flag = USA_supported_walkernic
+	}
+	
+	mean_time_to_happen = {
+	 months = 0
+	}
+	
+	option = {
+		name = "Onwards!"
+		
+		war = {
+			target = NIC
+			attacker_goal = { casus_belli = filibuster_conquest }
+			defender_goal = { casus_belli = status_quo }
+			call_ally = no
+		}
 	}
 }
 	
