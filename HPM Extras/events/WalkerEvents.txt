@@ -229,12 +229,6 @@ country_event = {
 	}
 	
 	option = {
-		name = "He's on his own this time."
-		
-		relation = { who = NIC value = 50 }
-	}
-	
-	option = {
 		name = "Prepare your rifles men, we are going to Nicaragua!"
 		
 		relation = { who = NIC value = -50 }
@@ -246,12 +240,16 @@ country_event = {
 		}
 		set_country_flag = USA_supported_walkernic
 	}
+	
+	option = {
+		name = "He's on his own this time"
+	}
 }
 
 country_event = {
 	id = 100029 #Walker Departs to Nicaragua (Sonoran Filibuster failed)
 	title = "Walker Departs to Nicaragua!"
-	desc = "Famous 'filibuster' William Walker is at it again. This time he has set his sights on Nicaragua."
+	desc = "Famous 'filibuster' William Walker is at it again. This time he has set his sights on Nicaragua. Only time will tell wether he prevails or not."
 	
 	fire_only_once = yes
 	

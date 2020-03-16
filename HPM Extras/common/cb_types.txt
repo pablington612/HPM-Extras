@@ -10688,16 +10688,7 @@ filibuster_lc = {
 
     can_use = {
 		tag = USA
-        OR = {
-            NOT = { has_country_modifier = war_focus }
-            THIS = {
-                NOT = {
-                    has_country_flag = exclusive_acquire_all_cores_CB
-                    has_country_flag = exclusive_humiliate_CB
-                    has_country_flag = exclusive_make_puppet_CB
-                }
-            }
-        }
+		has_country_flag = filibusterlibcntrycb_allowed
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
@@ -10981,17 +10972,8 @@ filibuster_conquest = {
     crisis = no
 
     can_use = {
-        OR = {
-            NOT = { has_country_modifier = war_focus }
-            THIS = {
-                NOT = {
-                    has_country_flag = exclusive_acquire_all_cores_CB
-                    has_country_flag = exclusive_humiliate_CB
-                    has_country_flag = exclusive_liberate_country_CB
-                    has_country_flag = exclusive_make_puppet_CB
-                }
-            }
-        }
+		tag = USA
+		has_country_flag = filibusterconqcb_allowed
         NOT = { is_our_vassal = THIS }
         OR = {
             AND = {
