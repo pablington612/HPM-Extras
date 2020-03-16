@@ -35,4 +35,24 @@ political_decisions = {
 			release_vassal = WNI
 		}
 	}
+	
+	USA_integrate_nicaragua = {
+		potential = {
+			tag = USA
+			OR = {
+			WNI = { pop_majority_culture = dixie }
+			WNI = { pop_majority_culture = yankee }
+			}
+			UCA_2197 = { owned_by = WNI }
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			UCA_2197 = { remove_core = WNI }
+			UCA_2197 = { remove_core = NIC }
+			UCA_2197 = { add_core = USA }
+			inherit = WNI
+		}
+	}
 }
