@@ -93,8 +93,25 @@ political_decisions = {
 			MEX_2149 = { remove_core = MEX }
 			MEX_2142 = { remove_core = MEX }
 			MEX_2138 = { remove_core = MEX }
-			2662 = 	   { remove_core = MEX }
-			102 =      { remove_core = MEX }
+			2662     = { remove_core = MEX }
+			102      = { remove_core = MEX }
+		}
+	}
+	
+	USA_coup_mexico_peacefully = {
+		potential = {
+			revolution_n_counterrevolution = 1
+			MEX = { exists = yes }
+			MEX = { is_greater_power = no }
+			NOT = { is_our_vassal = MEX }
+		}
+		allow = {
+			war = no
+			MEX = { in_sphere = USA }
+			revolution_n_counterrevolution = 1
+		}
+		effect = {
+			create_vassal = MEX
 		}
 	}
 }

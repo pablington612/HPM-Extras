@@ -1,0 +1,14 @@
+## USA - Rename Nicaragua ##
+country_event = {
+	id = 101000
+	title = "Rename Nicaragua"
+	desc = "We have been pushed out of Sonora. We have lost."
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "We did all we could."
+		clr_country_flag = willwalk_expson
+	}
+}

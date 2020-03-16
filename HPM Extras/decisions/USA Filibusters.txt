@@ -44,6 +44,7 @@ political_decisions = {
 			WNI = { pop_majority_culture = yankee }
 			}
 			UCA_2197 = { owned_by = WNI }
+			NOT = { has_country_flag = USA_integrated_nicaragua }
 		}
 		allow = {
 			war = no
@@ -53,6 +54,36 @@ political_decisions = {
 			UCA_2197 = { remove_core = NIC }
 			UCA_2197 = { add_core = USA }
 			inherit = WNI
+			any_pop = {
+				limit = {
+					has_pop_culture = central_american
+				}
+				consciousness = 3
+				militancy = 5
+			}
+			set_country_flag = USA_integrated_nicaragua
+		}
+	}
+	
+	## Renaming Decisions ##
+	USA_rename_nicaragua = {
+		potential = {
+			has_country_flag = USA_integrated_nicaragua
+			NOT = { has_country_flag = usarenamed_nicaragua }
+		}
+		allow = {
+		}
+		effect = {
+			badboy = 1
+			2197 = { state_scope = { change_region_name = "Walker" } }
+			any_pop = {
+				limit = {
+					has_pop_culture = central_american
+				}
+				consciousness = 3
+				militancy = 3
+			}
+			set_country_flag = usarenamed_nicaragua
 		}
 	}
 }
