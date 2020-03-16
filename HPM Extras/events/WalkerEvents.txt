@@ -1,0 +1,286 @@
+## Sonoran Filibuster ##
+country_event = {
+	id = 100020 #Wiliam Walker's Expedition (Start) - MEX
+	title = "Wiliam Walker's Expedition"
+	desc = "yes"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		NOT = { USA = { has_country_flag = mexican_american_war_alternate_treaty } }
+		AND = {
+		year = 1853
+		month = 10
+		}
+	}
+	
+	immediate = {
+		SON = { primary_culture = dixie }
+		SON = { add_accepted_culture = yankee }
+		SON = { add_accepted_culture = mexican }
+		SON = { religion = protestant }
+		SON = { clr_country_flag = catholic_country}
+		SON = { set_country_flag = protestant_country }
+		MEX_2138 = { add_core = SON }
+		102 =  { add_core = SON }
+		2662 = { add_core = SON }
+	}
+		
+	option = {
+		name = "Dios Mio!"
+		set_country_flag = willwalk_expson
+		
+		2138 = {
+			add_province_modifier = {
+			name = filibuster_proveffect
+			duration = 95
+			}
+		}
+		2139 = {
+			add_province_modifier = {
+			name = filibuster_proveffect
+			duration = 95
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 100021 #The Filibuster Begins! - USA (Alt-Hist)
+	title = "The Filibuster Begins!"
+	desc = "pending"
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+	MEX = {country_event = 100022 }
+	}
+			
+	option = {
+		name = "To Sonora!"
+			
+		war = {
+			target = MEX
+			attacker_goal = { casus_belli = filibuster_lc }
+			defender_goal = { casus_belli = status_quo }
+			call_ally = no
+		}
+	}
+}
+
+country_event = {
+	id = 100022 #The Filibuster Begins! - MEX (Alt-Hist)
+	title = "The Sonoran War"
+	desc = "The 'Filibuster of Sonora', as the Americans call it, has begun. Their forces might be superior but we won't go down without a fight."
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+		
+	option = {
+		name = "'We need to push them out!'"
+	}
+}
+
+country_event = {
+	id = 100023 #Walker Retreats (This happens if the USA doesn't support Walker.) - USA
+	title = "Walker Retreats!"
+	desc = "After months of supply shortages and local resistance,"
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "Sonora es nuestra."
+		USA = { set_country_flag = sonfilibuster_failure }
+		clr_country_flag = willwalk_expson
+	}
+}
+
+country_event = {
+	id = 100024 #The Filibuster Fails! - USA (Alt-Hist)
+	title = "The Filibuster Fails!"
+	desc = "We have failed to capture Sonora. Our men are tired. The war isn't worth pursuing any further."
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		AND = {
+		MEX_2138 = { controlled_by = MEX }
+		102 = { controlled_by = MEX }
+		2662 = { controlled_by = MEX }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	immediate = {
+		MEX = { country_event = 100025 }
+		2138 = { remove_province_modifier = filibuster_proveffect }
+		2139 = { remove_province_modifier = filibuster_proveffect }	
+	}
+		
+	option = {
+		name = "Whatever..."
+		
+		end_war = MEX
+		MEX_2138 = { remove_core = SON }
+		102 = { remove_core = SON }
+		2662 = { remove_core = SON }
+		prestige = -15
+		set_country_flag = sonfilibuster_failure
+	}
+}
+
+country_event = {
+	id = 100025 #The Filibuster Fails! - MEX
+	title = "The Filibuster Fails!"
+	desc = "We have pushed the Americans back. This is a much needed victory. Time to celebrate."
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+		
+	option = {
+		name = "Viva Mexico!"
+		
+		prestige = 15
+		clr_country_flag = willwalk_expson
+	}
+}
+
+country_event = {
+	id = 100026 #The Filibuster Succeeds! - USA (Alt-Hist)
+	title = "The Filibuster Succeeds!"
+	desc = "We have pushed the Mexican army out of Sonora and have asserted our control over the region."
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		AND = {
+		2137 = { controlled_by = USA }
+		2140 = { controlled_by = USA }
+		2141 = { controlled_by = USA }
+		2138 = { controlled_by = SON }
+		2139 = { controlled_by = SON }
+		102  = { controlled_by = USA }
+		2662 = { controlled_by = USA }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		MEX = { country_event = 100027 }
+		2138 = { remove_province_modifier = filibuster_proveffect }
+		2139 = { remove_province_modifier = filibuster_proveffect }
+	}
+	
+	option = {
+		name = "Long live Walker and the Republic of Sonora!"
+		
+		end_war = MEX
+		MEX = { release = SON }
+		relation = { who = SON value = 200 }
+		relation = { who = MEX value = -100 }
+		diplomatic_influence = { who = SON value = 400 }
+		set_country_flag = sonfilibuster_success
+	}
+}
+
+country_event = {
+	id = 100027 #The Filibuster Succeeds! - MEX
+	title = "The Filibuster Succeeds!"
+	desc = "We have been pushed out of Sonora. We have lost."
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "We did all we could."
+		clr_country_flag = willwalk_expson
+	}
+}
+## End of Sonoran Filibuster ##
+
+## Nicaraguan Filibuster ##
+country_event = {
+	id = 100028 #Walker Departs to Nicaragua (Sonoran Filibuster suceeded)
+	title = "Walker Departs to Nicaragua!"
+	desc = "Well known adventurer and celebrity William Walker has set his sights on Nicaragua after recent news of a civil war reached his ears.  He has been granted generalship for his actions in Sonora."
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		AND = {
+		year = 1855
+		month = 3
+		}
+		NIC = { exists = yes }
+		has_country_flag = sonfilibuster_success
+	}
+	
+	mean_time_to_happen = {
+	 months = 1
+	}
+	
+	option = {
+		name = "He's on his own this time."
+		
+		relation = { who = NIC value = 50 }
+	}
+	
+	option = {
+		name = "Prepare your rifles men, we are going to Nicaragua!"
+		
+		relation = { who = NIC value = -50 }
+		diplomatic_influence = { who = NIC value = -400 }
+		define_general = {
+		name = "William Walker"
+		personality = charismatic
+		background = adventurer
+		}
+		war = {
+			target = NIC
+			attacker_goal = { casus_belli = filibuster_conquest }
+			defender_goal = { casus_belli = status_quo }
+			call_ally = no
+		}
+		set_country_flag = USA_supported_walkernic
+	}
+}
+
+country_event = {
+	id = 100029 #Walker Departs to Nicaragua (Sonoran Filibuster failed)
+	title = "Walker Departs to Nicaragua!"
+	desc = "Famous 'filibuster' William Walker is at it again. This time he has set his sights on Nicaragua."
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		AND = {
+		year = 1855
+		month = 3
+		}
+		has_country_flag = sonfilibuster_failure
+	}
+	
+	mean_time_to_happen = {
+	 months = 1
+	}
+	
+	option = {
+		name = "Well, good luck to him."
+	}
+}
+	
+	

@@ -1,0 +1,100 @@
+political_decisions = {
+	mexican_american_war_alternate_treaty = {
+		picture = "manifest_destiny"
+		potential = {
+			tag = USA
+			is_greater_power = yes
+			has_country_flag = hasmanifestdestiny
+			has_country_flag = mexico_refused_treaty
+			NOT = { has_country_flag = mexican_american_war_alternate_treaty }
+		}
+		allow = {
+			war = no
+			idealism = 1
+			state_n_government = 1
+			NOT = { truce_with = MEX }
+			NOT = { war_policy = pacifism }
+		}
+		
+		effect = {
+			set_country_flag = mexican_american_war_alternate_treaty
+			random_list = {
+				25 = { }
+				25 = { badboy = 1 }
+				25 = { badboy = 2 }
+				25 = { badboy = 3 }
+			}
+			MEX_2149 = { add_core = USA }
+			MEX_2142 = { add_core = USA }
+			MEX_2138 = { add_core = USA }
+			2662 = { add_core = USA }
+			102 = { add_core = USA }
+			relation = { who = MEX value = -200 }
+			diplomatic_influence = { who = MEX value = -200 }
+			leave_alliance = MEX
+			random_country = {
+				limit = {
+					tag = MEX
+					vassal_of = THIS
+				}
+				THIS = { release_vassal = MEX }
+			}
+			random_country = {
+				limit = {
+					is_our_vassal = MEX
+					NOT = { tag = THIS }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						tag = CAL
+						tag = TEX
+						tag = DES
+					}
+					OR = {
+						in_sphere = THIS
+						part_of_sphere = no
+					}
+					OR = {
+						vassal_of = THIS
+						is_vassal = no
+					}
+				}
+				country_event = 98650
+			}
+			any_pop = {
+				dominant_issue = {
+					factor = 0.05
+					value = jingoism
+				}
+				consciousness = 2
+			}
+		}
+	}
+	
+	USA_integrate_northern_territoriesmex = {
+		potential = {
+			revolution_n_counterrevolution = 1
+			has_country_flag = mexican_american_war_alternate_treaty
+			MEX_2149 = { owned_by = USA }
+			MEX_2142 = { owned_by = USA }
+			MEX_2138 = { owned_by = USA }
+			2662 = 	   { owned_by = USA }
+			102 =      { owned_by = USA }
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			MEX_2149 = { remove_core = MEX }
+			MEX_2142 = { remove_core = MEX }
+			MEX_2138 = { remove_core = MEX }
+			2662 = 	   { remove_core = MEX }
+			102 =      { remove_core = MEX }
+		}
+	}
+}

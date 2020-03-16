@@ -1,0 +1,38 @@
+political_decisions = {
+	USA_support_walker = {
+		picture = "manifest_destiny"
+		potential = {
+			tag = USA
+			MEX = { has_country_flag = willwalk_expson }
+			NOT = { has_country_flag = USA_supported_walker }
+		}
+		
+		allow = {
+			war = no
+			natioanlism_n_imperialism = 1
+		}
+		
+		effect = {
+			badboy = 3
+			country_event = 100021
+			set_country_flag = USA_supported_walker
+		}
+	}
+	
+	USA_create_territory_nic = {
+		potential = {
+			tag  = USA
+			nationalism_n_imperialism = 1
+			NIC = { exists = no }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			UCA_2197 = { add_core = WNI }
+			release_vassal = WNI
+		}
+	}
+}

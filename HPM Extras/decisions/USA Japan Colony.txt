@@ -1,0 +1,165 @@
+political_decisions = {
+	
+	USA_conquer_japanjap = {
+		potential = {
+			has_global_flag = enabled_usjapminimod
+			NOT = { has_country_flag = USA_conquer_japanjap }
+			TKG = { exists = no }
+			JAP = { is_greater_power = no }
+			JAP = { any_core = { owned_by = USA } }
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+		effect = {
+			casus_belli = {
+			target = JAP
+			type = cut_down_to_size
+			months = 16
+			}
+			set_country_flag = USA_conquer_japanjap
+		}
+	}
+	
+	USA_treaty_of_tokyojap = {
+		picture = unequal_treaty
+		potential = {
+			NOT = { has_country_flag = USA_treaty_of_tokyojap }
+			year = 1860
+			JAP = { is_greater_power = no }
+			truce_with = JAP
+			is_greater_power = yes
+			JAP = {
+				NOT = { war_with = THIS }
+				is_disarmed = yes
+			}
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			inherit = JAP
+			set_country_flag = USA_treaty_of_tokyojap
+		}
+	}
+		
+	USA_organize_japan = {
+		picture = orgjap
+		potential = {
+			tag = USA
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			NOT = { has_country_flag = USA_organize_japan }
+		}
+		
+		allow = {
+			JAP_1660 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1665 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1640 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1655 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1675 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1649 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1672 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1088 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+		}
+		
+		effect = {
+			country_event = 100001
+			prestige = 10
+			set_country_flag = USA_organize_japan
+		}
+	}
+	
+	USA_create_japanese_dominion = {
+		picture = usj
+		potential = {
+			tag = USA
+			is_greater_power = yes
+			revolution_n_counterrevolution = 1	
+			NOT = { has_country_flag = USA_create_japanese_dominion }
+		}
+		
+		allow = {
+			JAP_1660 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1665 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1640 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1655 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1675 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1649 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1672 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+			JAP_1088 = { OR = {
+			owned_by = USA
+			owner = { is_our_vassal = THIS }
+			} }
+		}
+		
+		effect = {
+			USA = { country_event = 100002 }
+			set_country_flag = USA_create_japanese_dominion
+		}		
+	}
+	
+	USJ_integrate_japanese = {
+		picture = usjjapsac
+		potential = {
+			tag = USA
+			is_our_vassal = USJ
+			NOT = { has_country_flag = USJ_integratedjaps }
+		}
+		
+		allow = {
+			is_our_vassal = USJ
+			year = 1885
+		}
+		
+		effect = {
+			USJ = { add_accepted_culture = japanese }
+			set_country_flag = USJ_integratedjaps
+		}
+	}
+}

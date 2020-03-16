@@ -1,0 +1,79 @@
+political_decisions = {
+	enable_hpmextra_options = {
+        picture = starting_options
+        alert = no
+        potential = {
+            ai = no
+            NOT = { has_global_flag = hpmextra_looking_through_options }
+            NOT = { year = 1837 }
+        }
+
+        allow = {
+            NOT = { year = 1837 }
+        }
+
+        effect = {
+            set_global_flag = hpmextra_looking_through_options
+            set_country_flag = hpmextra_country_hpmextra_looking_through_options
+        }
+
+        ai_will_do = { factor = 0 }
+    }
+
+    disable_hpmextra_options = {
+        picture = starting_options
+        alert = no
+        potential = {
+            ai = no
+            has_country_flag = hpmextra_country_hpmextra_looking_through_options
+            NOT = { year = 1837 }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            clr_global_flag = hpmextra_looking_through_options
+            clr_country_flag = hpmextra_country_hpmextra_looking_through_options
+        }
+
+        ai_will_do = { factor = 0 }
+    }
+	
+	enable_usjap_minimod = {
+		picture = usj_enable
+		alert = no
+		potential = {
+			tag = USA
+			has_global_flag = hpmextra_looking_through_options
+            has_country_flag = hpmextra_country_hpmextra_looking_through_options
+			NOT = { has_global_flag = enabled_usjapminimod }
+		}
+		
+		allow = {
+			NOT = { year = 1837 }
+		}
+		
+		effect = {
+			set_global_flag = enabled_usjapminimod
+		}
+		
+		ai_will_do = { factor = 0 }
+	}
+	
+	enable_willwalk_minimod = {
+		potential = {
+			tag = USA
+			has_global_flag = hpmextra_looking_through_options
+            		has_country_flag = hpmextra_country_hpmextra_looking_through_options
+			NOT = { has_global_flag = enabled_willwalkminimod }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_global_flag = enabled_willwalkminimod
+		}
+	}
+}

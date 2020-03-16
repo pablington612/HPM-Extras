@@ -1,0 +1,47 @@
+country_event = {
+	id = 100001
+	title = "Organize Japan"
+	desc = "We have asserted our control over the Japanese Islands, the question is:'How should we go about governing them?'"
+	 
+	is_triggered_only = yes
+	major = no
+	fire_only_once = yes
+	
+	option = {
+		name = "Maintain direct control, but with limited autonomy."
+			
+			JAP_1660 = { add_core = USJ }
+			JAP_1665 = { add_core = USJ }
+			JAP_1640 = { add_core = USJ }
+			JAP_1655 = { add_core = USJ }
+			JAP_1675 = { add_core = USJ }
+			JAP_1649 = { add_core = USJ }
+			JAP_1672 = { add_core = USJ }
+			JAP_1088 = { add_core = USJ }
+	}
+	
+	option = {
+		name = "Restore the old 'Daimyo' system, but keep control over some cities."
+	}
+}
+
+country_event = {
+	id = 100002
+	title = "A Japanese Dominion" #
+	desc = "After years of direct control of the Japanese islands, it's time to grant more autonomy to both colonists and natives alike."
+	 
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "May the Dominion of Japan prosper."
+			
+		release_vassal = USJ
+		USJ = { add_country_modifier = {
+		name = puppet_oppresion
+		duration = 1000
+		} }
+		treasury = -500000
+	}
+}
