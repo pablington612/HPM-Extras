@@ -75,14 +75,7 @@ political_decisions = {
 		}
 		effect = {
 			badboy = 1
-			2197 = { state_scope = { change_region_name = "Walker" } }
-			any_pop = {
-				limit = {
-					has_pop_culture = central_american
-				}
-				consciousness = 3
-				militancy = 3
-			}
+			country_event = 101000
 			set_country_flag = usarenamed_nicaragua
 		}
 	}

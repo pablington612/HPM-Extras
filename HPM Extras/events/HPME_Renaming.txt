@@ -2,13 +2,30 @@
 country_event = {
 	id = 101000
 	title = "Rename Nicaragua"
-	desc = "We have been pushed out of Sonora. We have lost."
+	desc = "The question of wether we should rename Nicaragua or not has come in Congress recently. There are those who think we should rename it in honor of Walker, but many are opposed to it, as they deem it immoral."
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = "We did all we could."
-		clr_country_flag = willwalk_expson
+		name = "Name it after Walker"
+		
+		2197 = { state_scope = { change_region_name = "Walker" } }
+		
+		any_pop = {
+			limit = {
+				has_pop_culture = central_american
+			}
+			consciousness = 5
+			militancy = 8
+		}
+	}
+	
+	option = {
+		name = "We better not. For the sake of stability."
+		
+		badboy = -2
 	}
 }
+
+## USA - Rename Coahuila ##
