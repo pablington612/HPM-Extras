@@ -10,18 +10,74 @@ country_event = {
 	option = {
 		name = "Maintain direct control, but with limited autonomy."
 			
-			JAP_1660 = { add_core = USJ }
-			JAP_1665 = { add_core = USJ }
-			JAP_1640 = { add_core = USJ }
-			JAP_1655 = { add_core = USJ }
-			JAP_1675 = { add_core = USJ }
-			JAP_1649 = { add_core = USJ }
-			JAP_1672 = { add_core = USJ }
-			JAP_1088 = { add_core = USJ }
+		JAP_1660 = { add_core = USJ }
+		JAP_1665 = { add_core = USJ }
+		JAP_1640 = { add_core = USJ }
+		JAP_1655 = { add_core = USJ }
+		JAP_1675 = { add_core = USJ }
+		JAP_1649 = { add_core = USJ }
+		JAP_1672 = { add_core = USJ }
+		JAP_1088 = { add_core = USJ }
+			
 	}
 	
 	option = {
 		name = "Restore the old 'Daimyo' system, but keep control over some cities."
+		
+		1662 = { add_core = SAT remove_core = JAP }
+		1663 = { add_core = SAT remove_core = JAP }
+		1664 = { add_core = SAT remove_core = JAP }
+		1679 = { add_core = SAT remove_core = JAP }
+		release_vassal = SAT
+		SAT = { civilized = yes }
+		
+		1667 = { add_core = TOS remove_core = JAP }
+		1665 = { add_core = TOS remove_core = JAP }
+		1666 = { add_core = TOS remove_core = JAP }
+		release_vassal = TOS
+		TOS = { civilized = yes }
+		
+		1639 = { add_core = CHO remove_core = JAP}
+		1641 = { add_core = CHO remove_core = JAP }
+		1640 = { add_core = CHO remove_core = JAP }
+		release_vassal = CHO
+		CHO = { civilized = yes }
+		
+		1659 = { add_core = JAP }
+		1657 = { add_core = JAP }
+		1658 = { add_core = JAP }
+		1656 = { add_core = JAP }
+		release_vassal = JAP
+		
+		1675 = { add_core = KAG remove_core = JAP }
+		1647 = { add_core = KAG remove_core = JAP }
+		1646 = { add_core = KAG remove_core = JAP }
+		1648 = { add_core = KAG remove_core = JAP }
+		1677 = { add_core = KAG remove_core = JAP 
+		release_vassal = KAG
+		KAG = { civilized = yes }
+		
+		1676 = { add_core = TKG remove_core = JAP }
+		2844 = { add_core = TKG remove_core = JAP }
+		1674 = { add_core = TKG remove_core = JAP }
+		1653 = { add_core = TKG remove_core = JAP }
+		1650 = { add_core = TKG remove_core = JAP }
+		release_vassal = TKG
+		TKG = { civilized = yes }
+		
+		1669 = { add_core = SEN remove_core = JAP }
+		1668 = { add_core = SEN remove_core = JAP }
+		1670 = { add_core = SEN remove_core = JAP }
+		1672 = { add_core = SEN remove_core = JAP }
+		release_vassal = SEN
+		SEN = { civilized = yes }
+		
+		1645 = { add_core = YZW remove_core = JAP }
+		1673 = { add_core = YZW remove_core = JAP }
+		1671 = { add_core = YZW remove_core = JAP }
+		release_vassal = YZW
+		YZW = { civilized = yes }
+		
 	}
 }
 
