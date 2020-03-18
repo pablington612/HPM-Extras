@@ -53,7 +53,7 @@ country_event = {
 		1647 = { add_core = KAG remove_core = JAP }
 		1646 = { add_core = KAG remove_core = JAP }
 		1648 = { add_core = KAG remove_core = JAP }
-		1677 = { add_core = KAG remove_core = JAP 
+		1677 = { add_core = KAG remove_core = JAP }
 		release_vassal = KAG
 		KAG = { civilized = yes }
 		
