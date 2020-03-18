@@ -67,6 +67,7 @@ country_event = {
 			defender_goal = { casus_belli = status_quo }
 			call_ally = no
 		}
+		set_country_flag = sonfilibuster_begins
 	}
 }
 
@@ -162,6 +163,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
+		has_country_flag = sonfilibuster_begins
 		AND = {
 		2137 = { province_control_days = 45 }
 		2140 = { province_control_days = 45 }
@@ -188,6 +190,7 @@ country_event = {
 		relation = { who = MEX value = -100 }
 		diplomatic_influence = { who = SON value = 400 }
 		set_country_flag = sonfilibuster_success
+		clr_country_flag = sonfilibuster_begins
 	}
 }
 
