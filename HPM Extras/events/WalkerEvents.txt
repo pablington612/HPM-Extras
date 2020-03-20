@@ -8,6 +8,7 @@ country_event = {
 	
 	trigger = {
 		tag = MEX
+		has_global_flag = enabled_willwalkminimod 
 		NOT = { USA = { has_country_flag = mexican_american_war_alternate_treaty } }
 		AND = {
 		year = 1853
@@ -109,6 +110,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
+		has_country_flag = sonfilibuster_begins
 		AND = {
 		MEX_2138 = { controlled_by = MEX }
 		102 = { controlled_by = MEX }
@@ -135,6 +137,7 @@ country_event = {
 		2662 = { remove_core = SON }
 		prestige = -15
 		set_country_flag = sonfilibuster_failure
+		clr_country_flag = sonfilibuster_begins
 	}
 }
 

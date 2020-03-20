@@ -5,6 +5,7 @@ political_decisions = {
 			tag = USA
 			MEX = { has_country_flag = willwalk_expson }
 			NOT = { has_country_flag = USA_supported_walker }
+			has_global_flag = enabled_willwalkminimod 
 		}
 		
 		allow = {
